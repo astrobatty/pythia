@@ -11,12 +11,16 @@ Modules and routines for time-series analysis of astronomical data sets.
 timeseries/periodograms -- library containing functions for time-series analysis
 
 To install, use miniconda3 or anaconda3, and run:
-        conda create -n pythia python=3.7
-        conda activate pythia
-        pip install git+https://github.com/astrobatty/pythia.git
+"""
+conda create -n pythia python=3.7
+conda activate pythia
+pip install git+https://github.com/astrobatty/pythia.git
+"""
 
-Then this test file should work:
-        python test_kepler.py
+Then the Kepler test file should work:
+"""
+python test_kepler.py
+"""
 
 
 ### TO DO:
