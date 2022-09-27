@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 
 from matplotlib import rc
 
-from pythia.timeseries.periodograms import scargle
-from pythia.timeseries.iterative_prewhitening import run_ipw, run_ipw_v02
+from pythia.timeseries.periodograms import LS_periodogram
+from pythia.timeseries.iterative_prewhitening import run_ipw#, run_ipw_v02
 
 
 # rc('text', usetex=True)
@@ -18,8 +18,8 @@ if __name__=="__main__":
 
   # times,fluxes = np.loadtxt("./test.data",unpack=True)
   times,fluxes = np.loadtxt("./test_tess.dat",unpack=True)
-  nu_w,amp_w = scargle(times,np.ones_like(times),f0=-5.,fn=5.,norm='amplitude')
-  nu,amp = scargle(times,fluxes-np.mean(fluxes),fn=50.,norm='amplitude')
+  nu_w,amp_w = LS_periodogram(times,np.ones_like(times),fn=5.,normalisation='amplitude')
+  nu,amp = LS_periodogram(times,fluxes-np.mean(fluxes),fn=50.,normalisation='amplitude')
 
 
   figw,axw = plt.subplots(1,1,figsize=(6.6957,6.6957),num=2)
@@ -40,7 +40,8 @@ if __name__=="__main__":
   yerr = 0.0005* np.ones_like(times)
   residuals, model, offsets, \
   frequencies, amplitudes, \
-  phases, stop_criteria = run_ipw(times,fluxes-np.mean(fluxes), yerr, maxiter=5, fn=30.)
+  phases, stop_criteria, \
+  noise_curve = run_ipw(times,fluxes-np.mean(fluxes), yerr, maxiter=5, fn=30.)
 
   # yerr = 0.0005* np.ones_like(times)
   # residuals, outpars= run_ipw_v02(times,fluxes-np.mean(fluxes), yerr, maxiter=5, fn=30.)
@@ -56,7 +57,7 @@ if __name__=="__main__":
   fig,ax = plt.subplots(1,1,figsize=(6.6957,6.6957))
 
   print(' C + A*sin( 2*pi*f*(t-t0)+phi )')
-  nu_,amp_ = scargle(times, residuals, fn=6.5, norm='amplitude')
+  nu_,amp_ = LS_periodogram(times, residuals, fn=6.5, normalisation='amplitude')
 
   print(offsets)
   print(frequencies)
