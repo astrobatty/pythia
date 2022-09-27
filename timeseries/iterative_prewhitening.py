@@ -1,11 +1,11 @@
-import scipy as sp
+#import scipy as sp
 import numpy as np
 import pymc3 as pm
-import exoplanet as xo
+#import exoplanet as xo
 import pymc3_ext as pmx
-import lightkurve as lk
+#import lightkurve as lk
 import theano.tensor as tt
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 from progress.bar import Bar
 # from pythia.timeseries.periodograms import scargle
