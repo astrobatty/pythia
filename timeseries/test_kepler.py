@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from pythia.timeseries.iterative_prewhitening import run_ipw
-from pythia.timeseries.periodograms_native import LS_periodogram
+from pythia.timeseries.periodograms import LS_periodogram
 
 if __name__=="__main__":
 
