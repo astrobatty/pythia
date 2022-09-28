@@ -20,16 +20,19 @@ Then install pythia from GitHub:
 ```
 pip install git+https://github.com/astrobatty/pythia.git
 ```
-or if you don't have pip, download the package as a zip file (unde the `CODE` menu), extract it, and type in the extracted directory:
+or if you don't have git, download the package as a zip file (unde the `CODE` menu), extract it, and type in the extracted directory:
 ```
 pip install .
 ```
 
-To use the Kepler test file, go the /timeseries/ directory and type:
+To use the test files, go the /timeseries/ directory and type:
+```
+python test.py
+```
+or 
 ```
 python test_kepler.py
 ```
-
 
 ### TO DO:
   - Generalize handling of priors
