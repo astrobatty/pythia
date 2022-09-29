@@ -2,8 +2,8 @@ import numpy as np
 
 
 def run_binning(x,y,yerr=None,phStart=-0.5,phStop=0.5,nbins=100):
-	# Binning function -- takes into account aliasing and error
-	# propogation on errorbins
+    # Binning function -- takes into account aliasing and error
+    # propogation on errorbins
     bwidth = (abs(phStart - phStop))/nbins
 
     print('Adopted bin-width: ',bwidth)
@@ -18,7 +18,7 @@ def run_binning(x,y,yerr=None,phStart=-0.5,phStop=0.5,nbins=100):
     return bins,bin_means,bin_errs
 
 
-def mean_smooth(x,window_len):
+def run_mean_smooth(x,window_len):
     """smooth the data using a window with requested size.
 
     This method is based on the convolution of a scaled window with the signal.
