@@ -23,7 +23,7 @@ setup(name='pythia',
       version=version,
       long_description=long_description,
       long_description_content_type='text/markdown',
-      packages=['pythia.timeseries','pythia.utils'],
-      package_dir = {'pythia.timeseries': 'timeseries','pythia.utils': 'utils'},
+      packages=['pythia.timeseries','pythia.utils','pythia.effective_models'],
+      package_dir = {'pythia.timeseries': 'timeseries','pythia.utils': 'utils','pythia.effective_models': 'effective_models'},
       install_requires=requirements
      )
