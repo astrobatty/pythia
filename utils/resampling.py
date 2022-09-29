@@ -15,7 +15,7 @@ def run_binning(x,y,yerr=None,phStart=-0.5,phStop=0.5,nbins=100):
         bin_errs = None
     bins = bins[:-1] + 0.5 * bwidth
 
-	return bins,bin_means,bin_errs
+    return bins,bin_means,bin_errs
 
 
 def mean_smooth(x,window_len):
