@@ -29,7 +29,7 @@ To use the test files, go the /timeseries/ directory and type:
 ```
 python test.py
 ```
-or 
+or
 ```
 python test_kepler.py
 ```

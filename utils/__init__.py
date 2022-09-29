@@ -1,4 +1,4 @@
-__all__=["resampling","conversions"]
+__all__=["resampling","conversions","general"]
 
 
 from .conversions import *
